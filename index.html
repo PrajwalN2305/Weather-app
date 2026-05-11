@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Leaflet (world map) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1 class="title">Weather App</h1>
+
+      <div class="search">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Enter city name..."
+          autocomplete="off"
+        />
+        <button id="searchBtn" type="button">Search</button>
+        <button id="myLocationBtn" type="button">Use My Location</button>
+      </div>
+
+
+      <p id="errorMsg" class="error" role="alert" hidden>
+        City not found. Please try again.
+      </p>
+
+      <!-- Click anywhere on the map to get weather -->
+      <div id="map" class="map"></div>
+
+      <section id="weatherSection" class="weather" hidden>
+
+
+        <div class="cityRow">
+          <div class="cityBlock">
+            <h2 id="cityName" class="cityName">City</h2>
+            <span id="countryCode" class="countryCode">IN</span>
+          </div>
+          <img id="weatherIcon" class="weatherIcon" alt="Weather icon" />
+        </div>
+
+        <div class="tempBlock">
+          <div id="temp" class="temp">0°C</div>
+          <div id="condition" class="condition">Clear Sky</div>
+        </div>
+
+        <div class="infoRow">
+          <div class="infoCard">
+            <div class="infoIcon">💧</div>
+            <div>
+              <div class="infoLabel">Humidity</div>
+              <div id="humidity" class="infoValue">0%</div>
+            </div>
+          </div>
+
+          <div class="infoCard">
+            <div class="infoIcon">🌬️</div>
+            <div>
+              <div class="infoLabel">Wind Speed</div>
+              <div id="wind" class="infoValue">0 km/h</div>
+            </div>
+          </div>
+
+          <div class="infoCard">
+            <div class="infoIcon">👁️</div>
+            <div>
+              <div class="infoLabel">Visibility</div>
+              <div id="visibility" class="infoValue">0 km</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">Made by Prajwal N</footer>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="./script.js"></script>
+</body>
+</html>
+
+
